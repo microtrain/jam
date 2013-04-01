@@ -11,12 +11,12 @@ source config/$1
 #  echo "Processing $t file..."  
 #done
 
+echo 'Initializing...'
 js=0
 jsempty=0
 css=0
 cssempty=0
 
-echo 'Initializing...'
 # If the directory for this type does not exist, create it.
 mkdir -p css
 mkdir -p js
@@ -24,7 +24,7 @@ mkdir -p js
 # Create the current time stamp, we will append this to the end of the file name.
 now=$(date +"%Y%m%d%k%M%S")
 
-echo 'Combining files...'
+echo 'Combining CSS and JavaScript files...'
 for FILE in $FILES
 do
 	# Get the extension of the file to be minified
@@ -57,11 +57,12 @@ do
 done
 
 
-echo 'Minifing files...'
+echo 'Minifing CSS files...'
 if [ "$css" == 1 ]; then
 	java -jar yuicompressor/build/yuicompressor-2.4.7.jar "css/main$now.css" -o "css/main-$now.min.css"
 fi
 
+echo 'Minifing JavaScript files...'
 if [ "$js" == 1 ]; then
 	java -jar yuicompressor/build/yuicompressor-2.4.7.jar "js/main$now.js" -o "js/main-$now.min.js"
 fi
