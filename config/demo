@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo $BASEPATH
 FILES="
 	demo/source/css/a.css 
 	demo/source/css/b.css
