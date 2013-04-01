@@ -4,9 +4,9 @@ FILES="
 	demo/source/css/a.css 
 	demo/source/css/b.css
 	demo/source/css/c.css
-	demo/source/js/1.js
-	demo/source/js/2.js
-	demo/source/js/3.js
+	demo/source/css/1.js
+	demo/source/css/2.js
+	demo/source/css/3.js
 "
 
 
