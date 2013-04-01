@@ -1,4 +1,48 @@
 Jason's Asset Manager (JAM)
 -------------------------------------------------------------------------------
-Provides simple shell utilities for combining and minifing web assets
+Provides simple shell utilities for combining and minifing web assets.
+
+# JAM
+
+[Documentation](http://the-42viral-project.readthedocs.org)
+
+
+## Usage
+Usage is pretty straight forward, simply create a config file under jam/config. Name the file whatever you want and add a $FILES array. This array will contanin the path to all of the CSS and JavaScript files you wat to include on a page. The demo config looks like the following:
+
+~/jam/config/demo
+
+	#!/bin/bash
+
+	FILES="
+		demo/source/css/a.css 
+		demo/source/css/b.css
+		demo/source/css/c.css
+		demo/source/js/1.js
+		demo/source/js/2.js
+		demo/source/js/3.js
+	"
+
+To combine and minify the assets, first make sure the build script is executable.
+
+	chmod +x build
+
+Then call the build script and pass the name of the desired config file as a parameter.
+
+	./build demo 
+
+Now if you look in ~/jam/css and ~/jam/js you will see both combined and minifiy files of the respective type.	
+
+## Credits
+
+* [Jason Snider](https://github.com/jasonsnider) - Core Development
+* [Lyubomir Dimov](https://github.com/ldimov) - Core Development
+
+## License
+
+Licensed under [The MIT License](http://www.opensource.org/licenses/mit-license.php)
+
+## Copyright
+
+Copyright 2013, [Jason D Snider](https://jasonsnider.com)
 
