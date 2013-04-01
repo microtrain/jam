@@ -1,0 +1,31 @@
+#!/bin/bash
+# $1 type css or js
+# $2 this is the config file
+
+echo 'Loading configuration...'
+
+source config/$2
+
+echo 'Initializing...'
+# If the directory for this type does not exist, create it.
+mkdir -p $1
+# Create the current time stamp, we will append this to the end of the file name.
+now=$(date +"%Y%m%d%k%M%S")
+
+# Remove previous files.
+rm $1/main*.$1
+
+echo 'Combining files...'
+for FILE in $FILES
+do
+	cat $FILE >> $1/main$now.$1
+done
+
+echo 'Minifing files...'
+java -jar yuicompressor/build/yuicompressor-2.4.7.jar "$1/main$now.$1" -o "$1/main-$now.min.$1"
+
+echo "Process complete :)";
+
+
+
+
