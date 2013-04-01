@@ -37,7 +37,7 @@ publish
 build/buildinfo.properties
 build/config/buildinfo.properties
 
-
-
 # -------------------------------- Project Specific ---------------------------
+js/*
+css/*
 
