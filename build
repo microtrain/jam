@@ -53,7 +53,7 @@ do
 		js=1;
 	fi
 
-	cat $FILE >> $ext/main$now.$ext
+	cat $FILE >> "$ext/main$now.$ext"
 done
 
 
