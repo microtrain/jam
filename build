@@ -22,7 +22,7 @@ mkdir -p css
 mkdir -p js
 
 # Create the current time stamp, we will append this to the end of the file name.
-now=$(date +"%Y%m%d%k%M%S")
+now=$(date +"%Y%m%d%H%M%S")
 
 echo 'Combining CSS and JavaScript files...'
 for FILE in $FILES
