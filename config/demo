@@ -1,6 +1,5 @@
 #!/bin/bash
-CSSOUT="css/"
-JSOUT="js/"
+COMPILETO="compiled/"
 FILES="
 	demo/source/css/a.css 
 	demo/source/css/b.css
