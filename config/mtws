@@ -1,0 +1,15 @@
+#!/bin/bash
+COMPILETO="/var/www/vhosts/microtrain.net/httpdocs/theme/website/compiled/"
+
+FILES="
+	/var/www/vhosts/microtrain.net/httpdocs/theme/website/vendors/bootstrap/css/bootstrap.css
+	/var/www/vhosts/microtrain.net/httpdocs/theme/website/vendors/bootstrap/css/bootstrap-responsive.css
+	/var/www/vhosts/microtrain.net/httpdocs/theme/website/css/application.css
+	/var/www/vhosts/microtrain.net/httpdocs/theme/website/vendors/jquery/jquery-1.9.1.js
+	/var/www/vhosts/microtrain.net/httpdocs/theme/website/vendors/bootstrap/js/bootstrap.js
+	/var/www/vhosts/microtrain.net/httpdocs/theme/website/js/application.js
+"
+
+
+
+

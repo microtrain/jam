@@ -17,6 +17,9 @@ jsempty=0
 css=0
 cssempty=0
 
+echo "JavaScript write path = $COMPILETO"
+echo "CSS write path = $COMPILETO"
+
 # If the directory for this type does not exist, create it.
 mkdir -p css
 mkdir -p js
@@ -37,9 +40,11 @@ do
 		if [ "$cssempty" == 0 ]; then
 
 			# Remove previous files
-			rm css/$1*.css
+			echo "Executing rm $COMPILETO$1*.css..."
+			rm $COMPILETO$1*.css
 			# Set flag so as to know previous files have been removed
 			cssempty=1
+			#cat $FILE >> "$COMPILETO$1-$now.$ext"
 		fi
 
 		# Set flag so as to know we have CSS files to combine and minify
@@ -47,26 +52,28 @@ do
 
 	else
 		if [ "$jsempty" == 0 ]; then
-			rm js/$1*.js
+			echo "Executing rm $JSSOUT$1*.js..."
+			rm $COMPILETO$1*.js
 			jsempty=1
 		fi 
 		js=1;
+		#cat $FILE >> "$COMPILETO$1-$now.$ext"
 	fi
 
-	cat $FILE >> "$ext/$1-$now.$ext"
+	#cat $FILE >> "$ext/$1-$now.$ext"
+	cat $FILE >> "$COMPILETO$1-$now.$ext"
 done
-
 
 echo 'Minifing CSS files...'
 if [ "$css" == 1 ]; then
-	java -jar yuicompressor/build/yuicompressor-2.4.7.jar "css/$1-$now.css" -o "css/$1-$now.min.css"
-	echo "Wrote css/$1-$now.min.css"
+	java -jar yuicompressor/build/yuicompressor-2.4.7.jar "$COMPILETO$1-$now.css" -o "$COMPILETO$1-$now.min.css"
+	echo "Wrote $COMPILETO$1-$now.min.css"
 fi
 
 echo 'Minifing JavaScript files...'
 if [ "$js" == 1 ]; then
-	java -jar yuicompressor/build/yuicompressor-2.4.7.jar "js/$1-$now.js" -o "js/$1-$now.min.js"
-	echo "Wrote JS/$1-$now.min.js"
+	java -jar yuicompressor/build/yuicompressor-2.4.7.jar "$COMPILETO$1-$now.js" -o "$COMPILETO$1-$now.min.js"
+	echo "Wrote $COMPILETO$1-$now.min.js"
 fi
 
 echo "Process complete :)";
