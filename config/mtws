@@ -1,6 +1,0 @@
-#!/bin/bash
-source /var/www/vhosts/microtrain.net/httpdocs/app/config/jam-mtws
-
-
-
-

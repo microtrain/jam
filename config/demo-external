@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#This path is intended to find the config file in an external location or 
+#project. This may look something like the following:
+#/var/www/example.com/config/jam-demo
+
+source /path/to/external/config/demo
+
+
+
