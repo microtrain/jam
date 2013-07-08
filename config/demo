@@ -9,4 +9,6 @@ FILES="
 	demo/source/js/3.js
 "
 
+BASEPATH="some/path"
+
 
