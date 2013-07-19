@@ -58,11 +58,15 @@ if [ "$css" == 1 ]; then
 	echo "Wrote $COMPILETO$1-$now.min.css"
 fi
 
-
 if [ "$js" == 1 ]; then
 	echo 'Minifing JavaScript files...'
 	java -jar yuicompressor/build/yuicompressor-2.4.7.jar "$COMPILETO$1-$now.js" -o "$COMPILETO$1-$now.min.js"
 	echo "Wrote $COMPILETO$1-$now.min.js"
+fi
+
+# A reference file is a file that contains nothing but the latest compilation time stamp
+if [ "$REF" == 1 ]; then
+	echo "$1-$now" > "$COMPILETO/latest.txt" 
 fi
 
 echo "Process complete :)";
