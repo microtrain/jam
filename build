@@ -65,9 +65,8 @@ if [ "$js" == 1 ]; then
 fi
 
 # A reference file is a file that contains nothing but the latest compilation time stamp
-if [ "$REF" == 1 ]; then
-	echo "$1-$now" > "$COMPILETO/latest.txt" 
-fi
+
+echo "$1-$now" > "$COMPILETO/$REF"
 
 echo "Process complete :)";
 

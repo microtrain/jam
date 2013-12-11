@@ -1,0 +1,3 @@
+#!/bin/bash
+source /var/www/vhosts/theprofessional.me/httpdocs/app/Config/jam-resume_builder
+
